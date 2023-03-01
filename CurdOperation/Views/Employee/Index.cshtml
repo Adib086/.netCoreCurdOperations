@@ -1,0 +1,35 @@
+﻿@model List<CurdOperation.Models.Domain.Employee>
+@{
+}
+<h1>Employee</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>Department</th>
+            <th>Salary</th>
+            <th>Date of Birth</th>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var employee in Model)
+        {
+            <tr>
+                <td>@employee.id</td>
+                <td>@employee.name</td>
+                <td>@employee.email</td>
+                <td>@employee.age</td>
+                <td>@employee.department</td>
+                <td>@employee.salary</td>
+                <td>@employee.dateOfBirth.ToString("dd-mm-yy")</td>
+                <td><a href="Employee/View/@employee.id">View</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
